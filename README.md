@@ -1,7 +1,7 @@
 ----->VENTOY_USB_TOOLKIT<-----
-A clean, safe, Ventoy-based USB toolkit for diagnostics, recovery, and system repair.
-Includes a guided setup script that builds an organized workspace, along with clear documentation and official download links.
+A clean, easy-to-use Ventoy-based USB toolkit for learning, diagnostics, recovery, and general tech tinkering.
+It includes a guided setup process, organized folder structure, and clear documentation to help you build your own recovery USB the right way.
 
 ⚠️ Important:
-This project does NOT download, install, or bundle any ISOs or software.
-It only provides structure, guidance, and verified links so you can safely build your own toolkit.
+This project is for educational and legitimate use only — learning, troubleshooting, and repairing systems you own or have permission to work on.
+It does not download, install, or include any software or operating systems.
