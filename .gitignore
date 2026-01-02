@@ -1,9 +1,3 @@
-
-
-# Safety: DO NOT COMMIT BINARIES / ISOs
-
-
-# Disk images / installers
 *.iso
 *.img
 *.ima
@@ -11,36 +5,25 @@
 *.cue
 *.nrg
 *.dmg
-
-# Windows install / PE images
 *.wim
 *.esd
 *.swm
 *.vhd
 *.vhdx
-
-# Archives that often contain tools/binaries
 *.7z
 *.rar
 *.zip
-
-# Executables / installers
 *.exe
 *.msi
 *.msix
 *.cab
-
-# Driver packs and firmware blobs
 *.inf
 *.cat
 *.sys
 *.drv
 *.dll
-
-
 .DS_Store
 Thumbs.db
-
-# VS Code
 .vscode/
+
 
