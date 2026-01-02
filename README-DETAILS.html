@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ventoy USB Toolkit — Full Setup Guide</title>
+  <style>
+    :root{
+      --bg:#0b0f17; --card:#121a2a; --text:#e9eefb; --muted:#a8b3cf;
+      --accent:#67d5ff; --border:rgba(255,255,255,.08);
+      --good:#43e39a; --warn:#ffcc66;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      --sans: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:var(--sans);background:radial-gradient(1200px 700px at 20% 0%, #142043 0%, var(--bg) 55%);color:var(--text)}
+    header{padding:22px 18px 10px;max-width:980px;margin:0 auto}
+    h1{margin:0 0 6px;font-size:24px}
+    p{margin:0;color:var(--muted)}
+    .wrap{max-width:980px;margin:0 auto;padding:18px;display:grid;gap:14px}
+    .card{background:linear-gradient(180deg,var(--card),#0f1626);border:1px solid var(--border);border-radius:16px;padding:16px}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .mono{font-family:var(--mono);font-size:12.5px;line-height:1.55;background:rgba(255,255,255,.04);border:1px solid var(--border);padding:12px;border-radius:12px;overflow:auto;color:var(--muted)}
+    .links{display:grid;gap:10px;margin-top:10px}
+    .link{display:flex;gap:10px;align-items:flex-start;border:1px solid var(--border);border-radius:12px;padding:10px;background:rgba(255,255,255,.03)}
+    .link b{color:var(--text)}
+    .link small{color:var(--muted)}
+    .step{margin:10px 0 0 0;color:var(--muted);line-height:1.55}
+    ul{margin:10px 0 0 18px;color:var(--muted);line-height:1.55}
+    .pill{display:inline-block;border:1px solid var(--border);border-radius:999px;padding:6px 10px;margin:6px 6px 0 0;color:var(--muted);font-size:12px}
+    .warnbox{border-left:4px solid var(--warn);padding:10px 12px;background:rgba(255,204,102,.08);border-radius:12px;border:1px solid rgba(255,204,102,.22);margin-top:10px}
+    .donate{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px;align-items:center}
+    .donate a{display:inline-flex;align-items:center;gap:10px;border-radius:12px;padding:10px 14px;border:1px solid var(--border);background:rgba(255,255,255,.03);color:var(--text)}
+    .donate a strong{letter-spacing:.2px}
+    .donate .coffee{background:#ffdd00;color:#000;border-color:rgba(0,0,0,.12)}
+    .donate .site{background:rgba(103,213,255,.12)}
+    .mini{font-size:13px;color:var(--muted);margin-top:10px}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Full Setup Guide (No Script Required)</h1>
+    <p>Click links, download tools, and place files into the correct folders. This page exists so the Visual README stays clean.</p>
+  </header>
+
+  <div class="wrap">
+
+    <section class="card">
+      <h2 style="margin:0 0 8px;font-size:18px;">1) Install Ventoy (Do This First)</h2>
+      <p class="step">
+        Ventoy must be installed to the USB before booting ISOs.
+        Installing Ventoy may format the USB (one-time). Always back up first.
+      </p>
+
+      <div class="warnbox">
+        <strong>Warning:</strong>
+        <span style="color:var(--muted);">
+          Double-check the drive letter in Ventoy2Disk before clicking Install/Update.
+          Selecting the wrong drive can wipe the wrong disk.
+        </span>
+      </div>
+
+      <div class="links">
+        <div class="link">
+          <div>⬇️</div>
+          <div>
+            <b><a href="https://www.ventoy.net/en/download.html" target="_blank" rel="noopener">Ventoy Download (Official)</a></b><br/>
+            <small>Download Ventoy, run Ventoy2Disk, select the USB, install.</small>
+          </div>
+        </div>
+        <div class="link">
+          <div>📖</div>
+          <div>
+            <b><a href="https://www.ventoy.net/en/doc_start.html" target="_blank" rel="noopener">Ventoy Getting Started</a></b><br/>
+            <small>Official docs: how to install, UEFI/BIOS notes, secure boot info.</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2 style="margin:0 0 8px;font-size:18px;">2) Where Everything Goes</h2>
+      <div class="mono">
+ISO\Linux\      → Ubuntu / Mint / Kali / SystemRescue (ISO files)
+ISO\Tools\      → Clonezilla / GParted / Rescuezilla / MemTest86 / HBCD_PE_x64 (ISO files)
+ISO\Windows\    → Windows 10/11 ISOs + WinPE ISO (Sergei Strelec)
+Drivers\        → Offline driver packs (folders with INF/CAT/SYS or installers)
+Tools\Portable\ → Portable Windows apps (CrystalDiskInfo, HWiNFO, CPU-Z, Rufus, AnyDesk)
+MediCat.USB\    → MediCat folder toolkit (copied manually as a folder)
+      </div>
+      <p class="step">
+        <span class="pill">Tip</span> ISO files can be named however you want, but clear names help (ex: Win11_23H2_x64.iso).
+      </p>
+    </section>
+
+    <section class="card">
+      <h2 style="margin:0 0 8px;font-size:18px;">3) Official Download Links</h2>
+
+      <h3 style="margin:14px 0 6px;font-size:16px;">Linux (ISOs → ISO\Linux)</h3>
+      <div class="links">
+        <div class="link"><div>🐧</div><div><b><a href="https://ubuntu.com/download/desktop" target="_blank" rel="noopener">Ubuntu Desktop</a></b><br/><small>Download ISO → place in ISO\Linux</small></div></div>
+        <div class="link"><div>🌿</div><div><b><a href="https://linuxmint.com/download.php" target="_blank" rel="noopener">Linux Mint</a></b><br/><small>Download ISO → place in ISO\Linux</small></div></div>
+        <div class="link"><div>🛡️</div><div><b><a href="https://www.kali.org/get-kali/" target="_blank" rel="noopener">Kali Linux</a></b><br/><small>Download ISO → place in ISO\Linux</small></div></div>
+        <div class="link"><div>🧯</div><div><b><a href="https://www.system-rescue.org/Download/" target="_blank" rel="noopener">SystemRescue</a></b><br/><small>Download ISO → place in ISO\Linux</small></div></div>
+      </div>
+
+      <h3 style="margin:14px 0 6px;font-size:16px;">Tools (ISOs → ISO\Tools)</h3>
+      <div class="links">
+        <div class="link"><div>🧬</div><div><b><a href="https://clonezilla.org/downloads.php" target="_blank" rel="noopener">Clonezilla</a></b><br/><small>Download ISO → place in ISO\Tools</small></div></div>
+        <div class="link"><div>🧩</div><div><b><a href="https://gparted.org/download.php" target="_blank" rel="noopener">GParted</a></b><br/><small>Download ISO → place in ISO\Tools</small></div></div>
+        <div class="link"><div>🛟</div><div><b><a href="https://rescuezilla.com/download" target="_blank" rel="noopener">Rescuezilla</a></b><br/><small>Download ISO → place in ISO\Tools</small></div></div>
+        <div class="link"><div>🧠</div><div><b><a href="https://www.memtest86.org/" target="_blank" rel="noopener">MemTest86</a></b><br/><small>Download image/ISO → place in ISO\Tools (use Ventoy-supported format)</small></div></div>
+        <div class="link"><div>🧰</div><div><b><a href="https://www.hirensbootcd.org/download/" target="_blank" rel="noopener">Hiren’s BootCD PE (HBCD PE)</a></b><br/><small>Download ISO → place in ISO\Tools</small></div></div>
+      </div>
+
+      <h3 style="margin:14px 0 6px;font-size:16px;">Windows (ISOs → ISO\Windows)</h3>
+      <div class="links">
+        <div class="link"><div>🪟</div><div><b><a href="https://www.microsoft.com/software-download/windows11" target="_blank" rel="noopener">Windows 11</a></b><br/><small>Download ISO → place in ISO\Windows</small></div></div>
+        <div class="link"><div>🪟</div><div><b><a href="https://www.microsoft.com/software-download/windows10ISO" target="_blank" rel="noopener">Windows 10</a></b><br/><small>Download ISO → place in ISO\Windows</small></div></div>
+        <div class="link"><div>🧪</div><div><b><a href="https://sergeistrelec.name/" target="_blank" rel="noopener">WinPE (Sergei Strelec) — Info</a></b><br/><small>Community WinPE build (distribution varies)</small></div></div>
+      </div>
+
+      <h3 style="margin:14px 0 6px;font-size:16px;">MediCat</h3>
+      <div class="links">
+        <div class="link"><div>🩺</div><div><b><a href="https://medicatusb.com/" target="_blank" rel="noopener">MediCat USB</a></b><br/><small>Download per site instructions, then copy into USB root as MediCat.USB folder</small></div></div>
+      </div>
+
+      <h3 style="margin:14px 0 6px;font-size:16px;">Portable Apps (Place under Tools\Portable)</h3>
+      <div class="links">
+        <div class="link"><div>💽</div><div><b><a href="https://crystalmark.info/en/software/crystaldiskinfo/" target="_blank" rel="noopener">CrystalDiskInfo</a></b><br/><small>Download ZIP (portable) → Tools\Portable\Disk\CrystalDiskInfo</small></div></div>
+        <div class="link"><div>🧾</div><div><b><a href="https://www.hwinfo.com/download/" target="_blank" rel="noopener">HWiNFO</a></b><br/><small>Download Portable → Tools\Portable\Hardware\HWiNFO</small></div></div>
+        <div class="link"><div>⚙️</div><div><b><a href="https://www.cpuid.com/softwares/cpu-z.html" target="_blank" rel="noopener">CPU-Z</a></b><br/><small>Download ZIP if available → Tools\Portable\Hardware\CPU-Z</small></div></div>
+        <div class="link"><div>🧪</div><div><b><a href="https://rufus.ie/" target="_blank" rel="noopener">Rufus (Portable)</a></b><br/><small>Download portable EXE → Tools\Portable\USB\Rufus</small></div></div>
+        <div class="link"><div>🛰️</div><div><b><a href="https://anydesk.com/en/downloads/windows" target="_blank" rel="noopener">AnyDesk</a></b><br/><small>Download EXE → Tools\Portable\Remote\AnyDesk</small></div></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2 style="margin:0 0 8px;font-size:18px;">4) Drivers (Offline Fixes)</h2>
+      <p class="step">
+        Store driver packs in <span class="pill">Drivers\</span>. When Windows has no network:
+      </p>
+      <ul>
+        <li>Open <b>Device Manager</b></li>
+        <li>Right-click the missing device → <b>Update driver</b></li>
+        <li><b>Browse my computer</b> → select <b>USB:\Drivers\</b></li>
+      </ul>
+      <p class="step">
+        Order (when needed): <b>Chipset</b> → <b>LAN/Wi-Fi</b> → <b>Touchpad</b> → rest.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2 style="margin:0 0 8px;font-size:18px;">Support & Updates (Optional)</h2>
+      <p class="step">
+        If this toolkit saved you time or helped recover a system, support future updates or check out projects here:
+      </p>
+
+      <div class="donate">
+        <a class="coffee" href="https://buymeacoffee.com/alrikbyteforger" target="_blank" rel="noopener">
+          ☕ <strong>Buy Me a Coffee</strong>
+        </a>
+        <a class="site" href="https://silasrealms.com" target="_blank" rel="noopener">
+          🌙 <strong>silasrealms.com</strong> <span style="color:var(--muted);">(author + projects)</span>
+        </a>
+      </div>
+
+      <p class="mini">
+        Totally optional — this toolkit is free to use. Keep your USB as a MASTER and clone it before major changes.
+      </p>
+    </section>
+
+  </div>
+</body>
+</html>

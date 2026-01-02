@@ -1,0 +1,68 @@
+
+---
+
+## .gitignore (copy/paste)
+
+This one is intentionally “paranoid” so you don’t accidentally commit ISOs, WinPE, MediCat, etc. You can loosen later if you *intentionally* want to track something.
+
+```gitignore
+# ============================
+# Safety: DO NOT COMMIT BINARIES / ISOs
+# ============================
+
+# Disk images / installers
+*.iso
+*.img
+*.ima
+*.bin
+*.cue
+*.nrg
+*.dmg
+
+# Windows install / PE images
+*.wim
+*.esd
+*.swm
+*.vhd
+*.vhdx
+
+# Archives that often contain tools/binaries
+*.7z
+*.rar
+*.zip
+
+# Executables / installers
+*.exe
+*.msi
+*.msix
+*.cab
+
+# Driver packs and firmware blobs
+*.inf
+*.cat
+*.sys
+*.drv
+*.dll
+
+# ============================
+# Common toolkit folders you DO NOT want public
+# (keep docs/scripts in repo; keep content on the USB only)
+# ============================
+ISO/
+Drivers/
+Tools/Portable/
+MediCat.USB/
+
+# If you store downloads anywhere
+Downloads/
+dist/
+build/
+
+# ============================
+# OS / editor noise
+# ============================
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
